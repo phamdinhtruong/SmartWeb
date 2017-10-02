@@ -1,0 +1,24 @@
+<a href="#/Customers">Go Back</a>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add Customer</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+      <form ng-submit="addCustomer()">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" ng-model="Customer.name" placeholder="Customer name">
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <textarea class="form-control" ng-model="Customer.phone" placeholder="Phone"></textarea>
+        </div>
+       
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>

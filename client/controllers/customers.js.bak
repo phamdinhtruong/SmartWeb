@@ -1,0 +1,40 @@
+var myApp = angular.module('myApp');
+
+myApp.controller('CustomersController', ['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams){
+	console.log('CustomersController loaded...');
+
+	$scope.getCustomers = function(){
+		$http.get('/api/Customers').success(function(response){
+			
+	alert('Getting customer...');
+			$scope.Customers = response;
+		});
+	}
+
+	$scope.getCustomer = function(){
+		var id = $routeParams.id;
+		$http.get('/api/Customers/'+id).success(function(response){
+			$scope.Customer = response;
+		});
+	}
+
+	$scope.addCustomer = function(){
+		console.log($scope.Customer);
+		$http.post('/api/Customers/', $scope.Customer).success(function(response){
+			window.location.href='#/Customers';
+		});
+	}
+
+	$scope.updateCustomer = function(){
+		var id = $routeParams.id;
+		$http.put('/api/Customers/'+id, $scope.Customer).success(function(response){
+			window.location.href='#/Customers';
+		});
+	}
+
+	$scope.removeCustomer = function(id){
+		$http.delete('/api/Customers/'+id).success(function(response){
+			window.location.href='#/Customers';
+		});
+	}
+}]);

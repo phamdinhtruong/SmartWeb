@@ -1,0 +1,17 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "Simple bookstore app",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --watch -- server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "express": "^4.15.4",
+    "mongoose": "^4.10.8"
+  },
+  "author": "Brad Traversy",
+  "license": "ISC"
+}
