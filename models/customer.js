@@ -6,6 +6,10 @@ const customerSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
+	email:{
+		type: String,
+		required: false
+	},
 	phone:{
 		type: String,
 		required: false
@@ -33,6 +37,7 @@ module.exports.updateCustomer = (id, customer, options, callback) => {
 	var query = {_id: id};
 	var update = {
 		name: customer.name,
+		email: customer.email,
 		phone: customer.phone,
 	}
 	Customer.findOneAndUpdate(query, update, options, callback);
