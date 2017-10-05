@@ -44,7 +44,7 @@ module.exports.updateCustomer = (customerId, customer, options, callback) => {
 }
 
 // Delete Customer
-module.exports.removeCustomer = (cid, callback) => {
-	var query = {_id: cid};
+module.exports.removeCustomer = (customerId, callback) => {
+	var query = {_id: customerId};
 	Customer.remove(query, callback);
 }
