@@ -33,8 +33,8 @@ module.exports.addCustomer = (customer, callback) => {
 }
 
 // Update Customer
-module.exports.updateCustomer = (id, customer, options, callback) => {
-	var query = {_id: id};
+module.exports.updateCustomer = (customerId, customer, options, callback) => {
+	var query = {_id: customerId};
 	var update = {
 		name: customer.name,
 		email: customer.email,
